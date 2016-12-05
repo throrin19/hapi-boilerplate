@@ -1,23 +1,15 @@
 'use strict';
 
 const Hapi          = require('hapi');
-const envConfig     = require('./environments/all');
 const plugins       = require('./manifest/plugins');
 const routes        = require('./manifest/routes');
+const serverConfig  = require('./manifest/server');
 
 module.exports.init = () => {
     const server = new Hapi.Server();
 
-    return new Promise((resolve, reject) => {
-        // configuration de base du serveur
-
-        server.app = {
-            envs : envConfig,
-            env  : process.env.NODE_ENV || 'development'
-        };
-
-        server.connection(envConfig.connections.api);
-        resolve();
+    return Promise.resolve().then(() => {
+        return serverConfig.init(server);
     }).then(() => {
         // configuration des plugins
         return plugins.init(server);
