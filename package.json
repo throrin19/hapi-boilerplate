@@ -1,0 +1,24 @@
+{
+  "private": true,
+  "name": "hapi-iut",
+  "version": "0.1.0",
+  "description": "Boilerplate Hapi utilisé pour les TP Node.JS des Licence pro",
+  "main": "server.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/throrin19/hapi-boilerplate.git"
+  },
+  "author": "",
+  "license": "ISC",
+  "bugs": {
+    "url": "https://github.com/throrin19/hapi-boilerplate/issues"
+  },
+  "homepage": "https://github.com/throrin19/hapi-boilerplate#readme",
+  "dependencies": {
+    "async": "2.1.4",
+    "hapi": "16.0.1"
+  }
+}
