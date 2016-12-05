@@ -19,6 +19,10 @@
   "homepage": "https://github.com/throrin19/hapi-boilerplate#readme",
   "dependencies": {
     "async": "2.1.4",
-    "hapi": "16.0.1"
+    "blipp": "2.3.0",
+    "good": "7.1.0",
+    "hapi": "16.0.1",
+    "hapi-boom-decorators": "2.2.2",
+    "lodash": "4.17.2"
   }
 }
