@@ -3,12 +3,12 @@
 const async     = require('async');
 const envConfig = require('../environments/all');
 
-module.exports.init = server => {
-    return new Promise((resolve, reject) => {
+module.exports.init = server => (
+    new Promise((resolve, reject) => {
         async.series({
             good(done) {
                 server.register({
-                    register : require('good')
+                    register : require('good'),
                 }, done);
             },
             blipp(done) {
@@ -16,16 +16,16 @@ module.exports.init = server => {
                     register : require('blipp'),
                     options  : {
                         showStart : envConfig.log.showRouteAtStart,
-                        showAuth  : true
-                    }
+                        showAuth  : true,
+                    },
                 }, done);
             },
             boom(done) {
                 server.register({
-                    register : require('hapi-boom-decorators')
+                    register : require('hapi-boom-decorators'),
                 }, done);
-            }
-        }, err => {
+            },
+        }, (err) => {
             if (err) {
                 reject(err);
                 return;
@@ -33,5 +33,5 @@ module.exports.init = server => {
 
             resolve();
         });
-    });
-};
+    })
+);

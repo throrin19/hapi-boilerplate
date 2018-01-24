@@ -5,7 +5,7 @@
   "description": "Boilerplate Hapi utilisé pour les TP Node.JS des Licence pro",
   "main": "server.js",
   "scripts": {
-    "start" : "node server.js"
+    "start": "node server.js"
   },
   "repository": {
     "type": "git",
@@ -25,5 +25,11 @@
     "hapi-boom-decorators": "3.0.1",
     "lodash": "4.17.4",
     "npm-check-updates": "^2.13.0"
+  },
+  "devDependencies": {
+    "babel-eslint": "8.2.1",
+    "eslint": "4.16.0",
+    "eslint-config-throrinstudio": "1.2.0",
+    "eslint-plugin-import": "2.8.0"
   }
 }

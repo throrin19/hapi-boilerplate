@@ -2,14 +2,14 @@
 
 const envConfig     = require('../environments/all');
 
-module.exports.init = server => {
-    return new Promise((resolve) => {
+module.exports.init = server => (
+    new Promise((resolve) => {
         server.app = {
             envs : envConfig,
-            env  : process.env.NODE_ENV || 'development'
+            env  : process.env.NODE_ENV || 'development',
         };
 
         server.connection(envConfig.connections.api);
         resolve();
-    });
-};
+    })
+);

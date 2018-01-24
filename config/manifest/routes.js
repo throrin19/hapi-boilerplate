@@ -6,13 +6,13 @@ const path      = require('path');
 const routeDir  = path.join(__dirname, '../../app/endpoints/');
 const routes    = fs.readdirSync(routeDir);
 
-module.exports.init = server => {
-    return new Promise((resolve, reject) => {
+module.exports.init = server => (
+    new Promise((resolve, reject) => {
         async.each(routes, (route, done) => {
             server.register({
-                register : require(path.join(routeDir, route))
+                register : require(path.join(routeDir, route)),
             }, done);
-        }, err => {
+        }, (err) => {
             if (err) {
                 reject(err);
                 return;
@@ -20,5 +20,5 @@ module.exports.init = server => {
 
             resolve();
         });
-    });
-};
+    })
+);

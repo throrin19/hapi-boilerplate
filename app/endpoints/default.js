@@ -10,14 +10,14 @@ exports.register = (server, options, next) => {
             config : {
                 description : 'Base route',
                 notes       : 'Route par défaut du projet',
-                tags        : [ 'api' ],
-                handler     : handler.root
-            }
-        }
+                tags        : ['api'],
+                handler     : handler.root,
+            },
+        },
     ]);
     next();
 };
 
 exports.register.attributes = {
-    name : 'default-routes'
+    name : 'default-routes',
 };

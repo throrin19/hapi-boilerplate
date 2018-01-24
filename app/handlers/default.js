@@ -2,6 +2,6 @@
 
 module.exports.root = (request, response) => {
     response(null,  {
-        result : 'vous êtes connectés'
+        result : 'vous êtes connectés',
     });
 };
